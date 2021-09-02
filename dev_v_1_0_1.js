@@ -6,3 +6,9 @@ function copy(text) {
     console.log(error);
   }
 }
+
+// 需求1继续开发
+Array.prototype.myCall = myCall;
+function myCall(arr) {
+  
+}
