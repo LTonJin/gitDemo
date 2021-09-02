@@ -3,3 +3,8 @@
 class Header {
   static title = 'title';
 }
+
+// 需求2也继续开发
+class footer {
+  
+}
