@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * @param {number} n
+       * @return {string}
+       */
+
+      var countAndSay = function (n) {
+        let str = "1";
+        for (let i = 0; i < n-1; i++) {
+          let tem = [];
+          let arr1 = str.split(""); //1
+          for (let j = arr1.length - 1; j >= 0; j--) {
+            while (arr1[j] === arr1[j - 1]) {
+              j--;
+            }
+            tem.unshift(arr1.splice(j));
+          }
+          str = tem.reduce((t, item) => {
+            return t + "" + item.length + "" + item[0];
+          }, "");
+        }
+
+        return str;
+      };
+      console.log(JSON.stringify(countAndSay(4)));
+    </script>
+  </body>
+</html>
